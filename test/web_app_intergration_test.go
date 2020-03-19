@@ -28,6 +28,10 @@ func TestIntegrationWebApp(t *testing.T) {
 	test_structure.RunTestStage(t, "deploy_web_app", func() { deployWebApp(t, webAppExampleDir) })
 
 	//4. Validate
+	test_structure.RunTestStage(t, "validate_web_app", func() { validateWebApp(t, webAppExampleDir) })
+}
+
+func validateWebApp(t *testing.T, webAppExampleDir string) {
 	webAppOpts := test_structure.LoadTerraformOptions(t, webAppExampleDir)
 
 	public_ip := terraform.OutputRequired(t, webAppOpts, "public_ip")
