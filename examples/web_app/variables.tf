@@ -7,7 +7,7 @@ variable "security_group_name" {
 variable "ami" {
   description = "The id of Amazon Machine Image"
   type = string
-  default = "ami-0520e698dd500b1d1"
+  default = "ami-0fc20dd1da406780b"
 }
 
 variable "instance_type" {
