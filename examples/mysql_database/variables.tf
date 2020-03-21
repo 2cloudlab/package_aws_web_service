@@ -1,17 +1,17 @@
 variable "db_name" {
   description = "The name to use for the database"
   type        = string
-  default = "name"
+  default     = "name"
 }
 
 variable "db_username" {
   description = "The username for the database"
   type        = string
-  default = "username"
+  default     = "username"
 }
 
 variable "db_password" {
   description = "The password for the database"
   type        = string
-  default = "password"
+  default     = "password"
 }

@@ -14,11 +14,7 @@ resource "aws_instance" "ec2_instance" {
               EOF
 
   tags = {
-    Name = "${aws_security_group.security_group.name}-2cloudlab"
-  }
-
-  lifecycle {
-    create_before_destroy = true
+    Name = "2cloudlab"
   }
 }
 

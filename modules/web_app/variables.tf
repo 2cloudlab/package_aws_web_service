@@ -6,30 +6,30 @@ variable "security_group_name" {
 
 variable "ami" {
   description = "The id of"
-  type = string
+  type        = string
 }
 
 variable "instance_type" {
   description = "Instance type"
-  type = string
+  type        = string
 }
 
 variable "db_address" {
   description = "db address"
-  type = string
+  type        = string
 }
 
 variable "db_port" {
   description = "db port"
-  type = string
+  type        = string
 }
 
 variable "db_name" {
-    description = "db name"
-    type = string
+  description = "db name"
+  type        = string
 }
 
 variable "db_password" {
-    description = "db password"
-    type = string
+  description = "db password"
+  type        = string
 }

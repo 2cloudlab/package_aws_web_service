@@ -9,8 +9,8 @@ provider "aws" {
 
 //create mysql database
 module "mysql_database" {
-  source                                         = "../../modules/mysql_database"
-  db_name = var.db_name
+  source      = "../../modules/mysql_database"
+  db_name     = var.db_name
   db_username = var.db_username
   db_password = var.db_password
 }

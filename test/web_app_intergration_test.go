@@ -1,11 +1,11 @@
 package test
 
 import (
+	"crypto/tls"
 	"fmt"
+	"strings"
 	"testing"
 	"time"
-	"strings"
-	"crypto/tls"
 
 	http_helper "github.com/gruntwork-io/terratest/modules/http-helper"
 	"github.com/gruntwork-io/terratest/modules/random"
@@ -39,7 +39,7 @@ func validateWebApp(t *testing.T, webAppExampleDir string) {
 	url := fmt.Sprintf("http://%s:%s", public_ip, listening_port)
 
 	maxRetries := 10
-	timeBetweenRetries := 10 * time.Second
+	timeBetweenRetries := 30 * time.Second
 
 	config := &tls.Config{}
 	http_helper.HttpGetWithRetryWithCustomValidation(
@@ -114,9 +114,9 @@ func createDbOpts(terraformDir string) *terraform.Options {
 		TerraformDir: terraformDir,
 
 		Vars: map[string]interface{}{
-			"db_name":        fmt.Sprintf("testDBName%s", random.UniqueId()),
-			"db_username":     fmt.Sprintf("testDBUserName%s", random.UniqueId()),
-			"db_password": "password",
+			"db_name":     fmt.Sprintf("testDBName%s", random.UniqueId()),
+			"db_username": "db_username",
+			"db_password": "db_password",
 		},
 
 		// Retry up to 3 times, with 5 seconds between retries

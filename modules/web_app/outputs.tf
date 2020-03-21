@@ -4,6 +4,6 @@ output "public_ip" {
 }
 
 output "listening_port" {
-  value = local.listening_port
+  value       = local.listening_port
   description = "port to listen"
 }
